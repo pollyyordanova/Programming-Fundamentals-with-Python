@@ -1,0 +1,120 @@
+def string_operations():
+    sentence = "Learning Python is fun!"
+    print("\nOriginal Sentence:", sentence)
+    
+    # Extract substring (e.g., "Python")
+    substring = sentence[9:15]
+    print("Extracted Substring:", substring)
+    
+    # Convert string to uppercase
+    uppercase_sentence = sentence.upper()
+    print("Uppercase Sentence:", uppercase_sentence)
+    
+    # Replace word in string
+    replaced_sentence = sentence.replace("fun", "awesome")
+    print("Modified Sentence:", replaced_sentence)
+
+def number_operations():
+    try:
+        num1 = float(input("\nEnter the first number: "))
+        num2 = float(input("Enter the second number: "))
+
+        print("Addition:", num1 + num2)
+        print("Subtraction:", num1 - num2)
+        print("Multiplication:", num1 * num2)
+        
+        # Handle division by zero
+        if num2 != 0:
+            print("Division:", num1 / num2)
+        else:
+            print("Error: Division by zero is not allowed.")
+        
+        # Power operation
+        print(f"{num1} raised to the power of {num2} is:", num1 ** num2)
+    
+    except ValueError:
+        print("Invalid input! Please enter valid numbers.")
+
+def boolean_operations():
+    is_python_fun = True
+    is_sunny = False
+
+    print("\nBoolean Operations:")
+    print("is_python_fun AND is_sunny:", is_python_fun and is_sunny)
+    print("is_python_fun OR is_sunny:", is_python_fun or is_sunny)
+    print("NOT is_python_fun:", not is_python_fun)
+    
+    # Comparison operations
+    print("\nComparison Operations:")
+    print("10 > 5:", 10 > 5)
+    print("5 == 5:", 5 == 5)
+
+def additional_data_types_operations():
+    # List operations
+    mixed_list = [1, 2, 3, "Python", True]
+    print("\nOriginal List:", mixed_list)
+    
+    # Append item to list
+    mixed_list.append("New Element")
+    print("Updated List:", mixed_list)
+    
+    # Access 4th element
+    if len(mixed_list) >= 4:
+        print("4th Element:", mixed_list[3])
+    
+    # Tuple operations
+    fruits = ("apple", "banana", "cherry")
+    print("\nTuple:", fruits)
+    print("Length of Tuple:", len(fruits))
+    
+    # Handle immutability of tuple
+    try:
+        fruits[1] = "orange"
+    except TypeError:
+        print("Error: Cannot modify an immutable tuple.")
+    
+    # Dictionary operations
+    person = {"name": "Alice", "age": 25, "city": "New York"}
+    print("\nOriginal Dictionary:", person)
+    
+    # Access dictionary value
+    print("Age:", person.get("age"))
+    
+    # Add new key-value pair
+    person["country"] = "USA"
+    print("Updated Dictionary:", person)
+
+def main():
+    while True:
+        print("\nChoose a data type to perform operations on:")
+        print("1. Strings")
+        print("2. Numbers")
+        print("3. Booleans")
+        print("4. Additional Data Types (List, Tuple, Dictionary)")
+        print("5. Exit")
+        
+        choice = input("Enter the number of your choice (1-5): ")
+        
+        if choice == '1':
+            string_operations()
+        elif choice == '2':
+            number_operations()
+        elif choice == '3':
+            boolean_operations()
+        elif choice == '4':
+            additional_data_types_operations()
+        elif choice == '5':
+            print("Exiting program.")
+            break
+        else:
+            print("Invalid choice! Please enter a valid option.")
+
+if __name__ == "__main__":
+    main()
+
+
+// Reflection: 
+// This project helped me practice using different Python data types and performing basic operations on them. 
+// I found it interesting to work with strings, numbers, booleans, and collections like lists, tuples, and dictionaries. 
+// One of the key challenges was handling errors, like avoiding division by zero and preventing changes to immutable data types like tuples. 
+// Overall, the project helped me better understand how to write interactive code that handles user input and different data types effectively.
